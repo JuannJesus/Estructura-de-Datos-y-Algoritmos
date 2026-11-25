@@ -44,13 +44,51 @@ En una tienda de libros en linea, almacenar el catalogo en listas simples vuelve
 
 Para evitar que el arbol degenere en una lista inclinada, los libros base se insertan comenzando por el codigo intermedio (`"103"` como raiz), seguido de `"101"`, `"102"`, `"104"` y `"105"`. Con el recorrido **In-Order** (`izquierda -> raiz -> derecha`), el catalogo se imprime automaticamente ordenado de menor a mayor: `101, 102, 103, 104`.
 
+```python
+class NodoBST:
+    def __init__(self, libro):
+        self.libro = libro
+        self.left = None   # ISBN menores
+        self.right = None  # ISBN mayores
+
+def insertar(raiz, libro):
+    if raiz is None:
+        return NodoBST(libro)
+    if libro.isbn < raiz.libro.isbn:
+        raiz.left = insertar(raiz.left, libro)
+    elif libro.isbn > raiz.libro.isbn:
+        raiz.right = insertar(raiz.right, libro)
+    return raiz
+```
+
 ### 3.3. Carrito de Compras (`NodoCarrito`)
 
 ![carrito](https://github.com/user-attachments/assets/8d2c1db8-12f6-4d1b-a878-9891a2ebc071)
 
-Cada libro agregado al carrito crea un NodoCarrito que se enlaza al inicio de la lista apuntando al nodo anterior mediante next (con el ultimo nodo apuntando a None). Esto permite recorrer los items para mostrar subtotales, quitar productos reacomodando punteros o validar todo el stock antes de confirmar la compra
+Cada libro agregado al carrito crea un `NodoCarrito` que se enlaza al inicio de la lista apuntando al nodo anterior mediante `next` (con el ultimo nodo apuntando a `None`). Esto permite recorrer los items para mostrar subtotales, quitar productos reacomodando punteros o validar todo el stock antes de confirmar la compra.
+
+```python
+class NodoCarrito:
+    def __init__(self, libro, cantidad):
+        self.libro = libro
+        self.cantidad = cantidad
+        self.next = None   # Puntero al siguiente libro
+
+# Insercion al inicio de la lista enlazada
+nuevo = NodoCarrito(libro, cant)
+nuevo.next = carrito
+carrito = nuevo
+```
+
 ---
 
+
+
+
+---
+
+
+---
 ## 4. Funcionalidades Implementadas
 
 | Opcion / Modulo | Funcionalidad | Estructura utilizada |
@@ -113,6 +151,7 @@ Siendo `n` la cantidad de libros en el catalogo y `h` la altura del arbol:
       [102] Cien Anos de Soledad | Garcia Marquez | Literatura | S/.50.0 | Stock: 8
       [103] Python Facil | Juan Perez | Programacion | S/.45.0 | Stock: 6
       [104] Clean Code | Robert Martin | Programacion | S/.85.0 | Stock: 3
+<img width="682" height="639" alt="image" src="https://github.com/user-attachments/assets/61660783-eda3-43fe-bed0-50ffb2771946" />
 
 ---
 
