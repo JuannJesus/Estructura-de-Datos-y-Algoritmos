@@ -8,8 +8,8 @@
 
 ## 1. Integrantes y Division del Trabajo
 
-* **Juan Jesus (Bloque 1 - Catalogo BST):** Implementacion de la clase `Libro`, estructura del nodo `NodoBST`, insercion recursiva por ISBN, busqueda binaria, eliminacion (por ISBN y por titulo) y recorrido In-Order.
-* **Integrante 2 (Bloque 2 - Carrito, Compras y Reportes):** Implementacion de la Lista Enlazada Simple (`NodoCarrito`), menu interactivo en consola, validacion de stock antes de comprar, descuento de inventario y reportes estadisticos.
+* **Juan Jesus Huanay Izquierdo (Bloque 1 - Catalogo BST):** Implementacion de la clase `Libro`, estructura del nodo `NodoBST`, insercion recursiva por ISBN, busqueda binaria, eliminacion (por ISBN y por titulo) y recorrido In-Order.
+* **Mauricio Justo Martinez Cueva (Bloque 2 - Carrito, Compras y Reportes):** Implementacion de la Lista Enlazada Simple (`NodoCarrito`), menu interactivo en consola, validacion de stock antes de comprar, descuento de inventario y reportes estadisticos.
 
 ---
 
